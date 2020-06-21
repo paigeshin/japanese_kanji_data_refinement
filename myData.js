@@ -9,8 +9,9 @@ fs.readFile('./Kanji/kanji.json', 'utf8', (error, jsonString) => {
     var text = "";
     var count = 1;
     for(let kanji of kanjis) {
-        text += `${kanji.kanji}\n`;
-        count++;
+        text += kanji.kanji;
+        // text += `${kanji.kanji}\n`;
+        // count++;
     }
-    console.log(text);
+    fs.writeFileSync('kanji.txt', text);
 });
