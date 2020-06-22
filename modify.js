@@ -27,6 +27,8 @@ if(kanjis.length === updateKanjis.length) {
             updatedKanjis.push(kanjis[i]);
         }
     }
+    console.log(updatedKanjis.length);
+
     const data = JSON.stringify(updatedKanjis);
-    fs.writeFileSync('kanji_v5.json', data);
+    // fs.writeFileSync('kanji_v7.json', data);
 }
