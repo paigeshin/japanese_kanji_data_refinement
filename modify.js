@@ -15,6 +15,8 @@ const updateKanjis = JSON.parse(kanjiRawDataForUpdate);
 const updatedKanjis = [];
 
 //1차 safe 처리, 두 개의 데이터의 길이는 같아야함.
+console.log(`kanji.length: ${kanjis.length}`);
+console.log(`updateKanjis.length: ${updateKanjis.length}`);
 if(kanjis.length === updateKanjis.length) {
     for (let i = 0; i < kanjis.length; i++) {
         //2차 safe 처리, 한자가 같아야함.
@@ -26,5 +28,5 @@ if(kanjis.length === updateKanjis.length) {
         }
     }
     const data = JSON.stringify(updatedKanjis);
-    fs.writeFileSync('kanji_v1.json', data);
+    fs.writeFileSync('kanji_v5.json', data);
 }

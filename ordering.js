@@ -16,12 +16,13 @@
 
 const fs = require('fs');
 
-const kanjiData = fs.readFileSync('./Data/UpdatedData/kanji_v1.json');
+const kanjiData = fs.readFileSync('kanji_v5.json');
 const kanjiJson = JSON.parse(kanjiData);
 
 //p1 - json data
 //p2 - 원하는 field 순서, ordering 하려면 필수
 //p3 - 안넣어도 된다. 그냥 읽기 편하게 format해줌
-const data = JSON.stringify( kanjiJson, ['index' ,'kanji', 'level', 'on', 'kun', 'meaning', 'meaning_kr', 'meaning_fr', 'words', 'word', 'reading'], 5);
+const data = JSON.stringify( kanjiJson, ['index' ,'kanji', 'level', 'on', 'kun', 'kr', 'meaning', 'meaning_kr', 'meaning_fr', 'words', 'word', 'reading'], 5);
 console.log(data);
-fs.writeFileSync('kanji_v4.json', data);
+fs.writeFileSync('kanji_v6.json', data);
+
