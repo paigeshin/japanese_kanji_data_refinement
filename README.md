@@ -2,6 +2,6 @@
 
 # 목표
 
-- 운, 흠 변경
+- 운, 훈 변경
 - kr ,value 추가
-# node_csv_to_json
+

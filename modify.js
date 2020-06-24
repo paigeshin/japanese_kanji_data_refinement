@@ -6,7 +6,7 @@
 * */
 
 const fs = require('fs');
-const kanjiRawData = fs.readFileSync('kanji.json');
+const kanjiRawData = fs.readFileSync('kanji_v10.json');
 const kanjis = JSON.parse(kanjiRawData);
 
 const kanjiRawDataForUpdate = fs.readFileSync('formatted_kanji_for_updates.json');
@@ -21,8 +21,8 @@ if(kanjis.length === updateKanjis.length) {
     for (let i = 0; i < kanjis.length; i++) {
         //2차 safe 처리, 한자가 같아야함.
         if (kanjis[i].kanji === updateKanjis[i].kanji) {
-            kanjis[i].kun = updateKanjis[i].kun;
-            kanjis[i].on = updateKanjis[i].on;
+            kanjis[i].kun = updateKanjis[i].kun.replace(/·/g, ',');
+            kanjis[i].on = updateKanjis[i].on.replace(/·/g, ',');
             kanjis[i].kr = updateKanjis[i].kr;
             updatedKanjis.push(kanjis[i]);
         }
@@ -30,5 +30,5 @@ if(kanjis.length === updateKanjis.length) {
     console.log(updatedKanjis.length);
 
     const data = JSON.stringify(updatedKanjis);
-    // fs.writeFileSync('kanji_v7.json', data);
+    fs.writeFileSync('kanji_v11.json', data);
 }

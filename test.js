@@ -1,5 +1,5 @@
 const fs = require('fs');
-const kanjiTestData = fs.readFileSync('./Data/UpdatedData/kanji_v8.json');
+const kanjiTestData = fs.readFileSync('kanji_v12.json');
 const kanjis = JSON.parse(kanjiTestData);
 
 for (let i = 0; i < 20; i++) {
